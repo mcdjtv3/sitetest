@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maths Choix</title>
+    <link rel="stylesheet" href="frenche.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('../images/background.png') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Ajustement de la hauteur pour les éléments */
+        }
+
+        .container {
+            display: flex;
+            gap: 50px; /* Espacement entre les boutons */
+            margin-bottom: 20px;
+        }
+
+        .track {
+            position: relative;
+            width: 250px;
+            height: 250px;
+        }
+
+        .contour {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            z-index: 1;
+            transition: content 0.3s ease; /* Transition pour l'image de contour */
+        }
+
+        /* Centrer le texte du bouton dans le contour */
+        .btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-100%, -50%);
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            z-index: 2;
+        }
+.track:hover .btn img {
+            transform: scale(1.2); /* Agrandit l'image à 120% au survol */
+        }
+        .btn img {
+            width: 200%; /* Ajustement pour l'image plus grande */
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease; /* Transition fluide pour l'effet de grossissement */
+        }
+
+        /* Changer l'image du contour au survol */
+        .track:hover .contour {
+            content: url('../images/Layerhover.png'); /* Remplace l'image du contour au survol */
+        }
+
+        .return-link {
+            font-size: 14px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .return-link:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="track" id="track1">
+            <img src="../images/Layer.png" class="contour" alt="Contour">
+            <button class="btn" onclick="location.href='../page6/mathsapp.html'">
+                <img src="../images/Maths app.png" alt="Track Button">
+            </button>
+        </div>
+        <div class="track" id="track2">
+            <img src="../images/Layer.png" class="contour" alt="Contour">
+            <button class="btn" onclick="location.href='../page7/mathsfi.html'">
+                <img src="../images/Maths.png" alt="Track Button">
+            </button>
+        </div>
+    </div>
+    <a href="../page3/s1franco.html" class="return-link">&lt; Retour</a>
+</body>
+</html>
